@@ -12,3 +12,7 @@ If anything, this will just serve as a nice template for me to plugin the actual
 
 The colors are intentionally wild at the moment for testing purposes.
 By doing this I was able to ensure which divs/elements were selected by CSS.
+
+# 11:40AM 2/21/22
+
+Rough sketch coming along well, FullCalendar has been initialized

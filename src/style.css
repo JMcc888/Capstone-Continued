@@ -521,3 +521,7 @@ button#book-button:hover {
 .services-content-img {
   width: 30rem;
 }
+
+.forgot-password-text {
+  background-color: rgb(0, 162, 255);
+}
