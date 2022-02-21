@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="input-body">
 <!-- Hamburger Lines Container -->
 <div class="header__menu">
   <div class="header__menu--line"></div>
@@ -26,16 +26,24 @@
 </ul>
 </header>
 <div class="sign-up-content">
-    <div class="servicessign-up-text"><h1 class="sign-up-content-title">Sign Up</h1></div>
+    <div class="services-sign-up-text"><h1 class="sign-up-content-title">Sign Up</h1>
+    <h3>Register now to view our current schedule, and book a future appointment</h3></div>
     <div class="sign-up-content-main">
         <div class="sign-up-content-form">
+            <p class="form-para">Username</p>
         <input type="textarea" placeholder="username">
+            <p class="form-para">Email</p>
         <input type="textarea" placeholder="email">
+            <p class="form-para">Password</p>       
         <input type="textarea" placeholder="password">
-        <a href="#"><button>Sign Up</button></a>
+        <a href="#"><button class="button sign-up-button">Sign Up</button></a>
+        
         <p class="existing-member">Already a member?</p>
-        <a href="#"><p class="existing-member">Click here</p></a>
-        <p class="existing-member">to login</p>
+        <div class="existing-user-check">
+            <p class="existing-member"><a href="login.html">
+                Click here</a>
+        to login</p>
+    </div>
     </div>
     </div>
   </div>

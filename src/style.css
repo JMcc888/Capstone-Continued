@@ -9,7 +9,10 @@
 
 body {
     z-index: 1;
-    /* background-color: blueviolet; */
+}
+
+.input-body {
+    background-color: rgba(89, 90, 185, 0.432);
 }
 
 /* Universal text setting */
@@ -421,4 +424,99 @@ button#book-button:hover {
         color: blueviolet;
         font-size: 20px;
     }
+    .services-content img {
+      width: 100%;
+      overflow: hidden;
+    }
+}
+
+.sign-up-content, .login-content, .contact-us {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.sign-up-content-main, .login-content-main, .contact-us-content {
+  display: flex;
+  flex-direction: column;
+  background: -webkit-linear-gradient(rgb(48, 233, 57), rgb(1, 255, 115));
+  align-items: center;
+  width: 15rem;
+  height: 400px;
+}
+
+.sign-up-content-form, .login-content-form {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem;
+  line-height: 2;
+}
+
+.services-sign-up-text, .services-login-text, .contact-us-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: orange;
+  width: 100%;
+}
+
+/* Align last two text items in form */
+.existing-user-check {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+}
+
+.existing-user-check a {
+  color: yellow;
+}
+
+.existing-user-check p {
+  color: antiquewhite;
+}
+
+.existing-user-check p,
+.existing-user-check a{
+  font-size: 15px;
+}
+
+.existing-user-check a:hover {
+  color: red;
+}
+
+.sign-up-button {
+  margin-top: 15px;
+  background-color: orchid;
+  color: white;
+}
+
+.sign-up-button:hover {
+  color: yellow;
+  background-color: rgb(42, 165, 108);
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(204, 126, 139);
+}
+
+.services-content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-content-main {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.services-content-img {
+  width: 30rem;
 }
