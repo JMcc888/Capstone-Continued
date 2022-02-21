@@ -311,8 +311,9 @@ it works :D */
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: rgb(255, 25, 25);
+    color: rgb(100, 14, 158);
 }
+
 
 .index-landing h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
