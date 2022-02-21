@@ -2,11 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link href="../node_modules/fullcalendar/main.css" rel="stylesheet" />
+    <script src="../node_modules/fullcalendar/main.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Booking</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
+    
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
   </head>
   <body>
    <!-- Hamburger Lines Container -->
@@ -26,6 +40,7 @@
   </ul>
 </header>
     <h1>Currently Under Construction...</h1>
+    <div id="calendar"></div>
     <script src="nav.js" async defer></script>
   </body>
 </html>
