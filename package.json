@@ -7,5 +7,28 @@
     "express": "^4.17.3",
     "fullcalendar": "^5.10.2",
     "nodemon": "^2.0.15"
-  }
+  },
+  "name": "capstone-fe-ui",
+  "description": "After being tasked with creating a simple front-end for my next presentation, I decided to create this repo to track all changes to the project.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production && node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMcc888/Capstone.git"
+  },
+  "keywords": [
+    "capstone"
+  ],
+  "author": "Johnny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMcc888/Capstone/issues"
+  },
+  "homepage": "https://github.com/JMcc888/Capstone#readme"
 }
