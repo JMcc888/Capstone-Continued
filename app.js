@@ -2,12 +2,17 @@
 const express = require("express");
 const dotenv = require("dotenv");
 
+// Load Config Variables
+dotenv.config({ path: "./config/config.env" });
+
 //Express Config
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
+
 // Import Routes
 const index = require("./routes/index");
+
 // Use Routes
 app.use(index);
 
