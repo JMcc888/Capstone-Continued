@@ -303,7 +303,7 @@ it works :D */
     display: flex;
     padding: 100px;
     height: 100vh;
-    background-color: aqua;
+    background-color: rgb(18, 136, 136);
     background-image: url(img/si.jpg);
     background-size: cover;
     background-position: center;
