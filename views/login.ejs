@@ -1,15 +1,25 @@
 <%- include('partials/header') %>
 <div class="login-content">
-    <div class="forgot-password-text">
-      <h1 class="login-content-title">Forgot Password?</h1>
-    </div>
-    <div class="login-content-main">
-            <div class="login-content-form">
-                <p class="forgot-password-para">Please enter your email address.</p>
-            <input type="textarea" placeholder="email">
-            <a href="#"><button class="button sign-up-button">Submit</button></a>
-            <p class="forgot-password-para">An email will be sent to the given address with instructions to reset your password.</p>
-                </div>
-        </div>
+  <div class="services-login-text">
+    <h1 class="login-content-title">Login</h1>
+    <p class="login-content-para"> Login below to schedule and view current appointments</p>
   </div>
+  <div class="login-content-main">
+          <div class="login-content-form">
+            <form class="login-form" action="POST">
+            <p>Email</p>
+          <input type="textarea" placeholder="email" required>
+          <p>Password</p>
+          <input type="textarea" placeholder="password" required>
+          <a href="#"><button class="button sign-up-button">Login</button></a>
+          <p class="forgot-password">Forgot Password?</p>
+          <div class="existing-user-check">
+            <p class="existing-member"><a href="/forgotpassword">
+                Click here</a>
+        to reset</p>
+            </form>
+    </div>
+          </div>
+      </div>
+</div>
 <%- include('partials/footer') %>
