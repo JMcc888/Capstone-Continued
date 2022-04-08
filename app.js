@@ -1,6 +1,7 @@
 // Import NPM Packages
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 // Load Config Variables
 dotenv.config({ path: "./config/config.env" });
@@ -12,6 +13,8 @@ app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
+
+app.use(cors);
 
 // Import Routes
 const index = require("./routes/index");
