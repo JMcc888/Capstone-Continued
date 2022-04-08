@@ -3,6 +3,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
+// Import Local Files
+const connectDB = require("./config/connectdb");
+
 // Load Config Variables
 dotenv.config({ path: "./config/config.env" });
 
@@ -19,10 +22,10 @@ app.use(cors());
 
 // Connect to DB
 connectDB();
+
 // Import Routes
 const index = require("./routes/index");
 const navRoutes = require("./routes/nav");
-const connectDB = require("./config/connectdb");
 
 // Use Routes
 app.use(index);
