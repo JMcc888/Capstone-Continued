@@ -50,10 +50,12 @@ connectDB();
 // Import Routes
 const index = require("./routes/index");
 const navRoutes = require("./routes/nav");
+const loginRoutes = require("./routes/login");
 
 // Use Routes
 app.use(index);
 app.use(navRoutes);
+app.use("/login", loginRoutes);
 
 // Run App
 app.listen(PORT, () => {
