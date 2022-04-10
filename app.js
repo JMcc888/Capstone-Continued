@@ -2,9 +2,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const bodyparser = require("body-parser");
+const passport = require("passport");
+const passportLocal = require("passport-local");
+const expressSession = require("express-session");
 
 // Import Local Files
 const connectDB = require("./config/connectdb");
+const User = require("./models/user");
 
 // Load Config Variables
 dotenv.config({ path: "./config/config.env" });
@@ -13,6 +18,25 @@ dotenv.config({ path: "./config/config.env" });
 const app = express();
 
 app.use(express.static("public"));
+
+app.use(bodyparser.urlencoded({ extended: true }));
+
+// Session config
+app.use(
+  expressSession({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+// Passport Config
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+const LocalStrategy = passportLocal.Strategy;
+passport.use(new LocalStrategy(User.authenticate()));
 
 const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");

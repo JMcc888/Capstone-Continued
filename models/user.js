@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: ["user"],
-    // admin will be assigned manually
+    // administrative roles will be assigned manually
     default: "user",
   },
   password: {

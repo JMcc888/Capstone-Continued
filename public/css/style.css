@@ -54,7 +54,7 @@ ul.header-main-nav-links li{
     padding-right: 3vw;
 }
 
-/* Sign Up and Login Tabs*/
+/* Dynamic tabs */
 ul.header-main-nav-links li:nth-child(5) {
     background-color: orchid;
     border: 1.5px solid green;
