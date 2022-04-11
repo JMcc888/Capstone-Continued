@@ -68,7 +68,8 @@ app.listen(PORT, () => {
 
 /////// TO DO ////////////
 
-//Refactor account routes
-// into one controller
+// Refactor account routes into one controller
+
+// Redo Routes to behave like booking
 
 ///////////////////////////////////////

@@ -1,3 +1,55 @@
 <%- include('partials/header') %>
 <%- include('partials/navs/schedule&bookingnav') %>
+
+ <link href="/fullcalendar/main.css" rel="stylesheet" />
+<script src="/fullcalendar/main.js"></script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  //     start: '2022-03-16T16:00:00'
+
+  const wamt = '<%= data[4].date %>'
+  
+
+  const wamm = '<%=JSON.stringify(data[4].name)%>'
+
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: '2022-03-07',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      timeZone: 'EST',
+      events: [
+        {
+          title: wamm,
+          start: wamt
+        },
+        {
+          title: wamm,
+          start: '2022-03-07',
+          end: '2022-03-10'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2022-03-28'
+        }
+      ],
+      timeFormat: 'H(:mm)' // uppercase H for 24-hour clock
+    });
+
+    calendar.render();
+  });
+</script>
+
+<div id="calendar"></div>
+
+
 <%- include('partials/footer') %>
