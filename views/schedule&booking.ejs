@@ -8,18 +8,20 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   
-  //     start: '2022-03-16T16:00:00'
-
   const wamt = '<%= data[4].date %>'
   
-
   const wamm = '<%=JSON.stringify(data[4].name)%>'
+
+  const wamn = '<%=JSON.stringify(data[3].name)%>'
+
+  const wamo = '<%=JSON.stringify(data[2].name)%>'
+
 
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2022-03-07',
+      initialDate: Date.now(),
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -32,13 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
           start: wamt
         },
         {
-          title: wamm,
+          title: wamn,
           start: '2022-03-07',
           end: '2022-03-10'
         },
         {
-          title: 'Click for Google',
-          url: 'http://google.com/',
+          title: wamo,
           start: '2022-03-28'
         }
       ],
