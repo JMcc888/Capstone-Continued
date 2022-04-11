@@ -51,13 +51,24 @@ connectDB();
 const index = require("./routes/index");
 const navRoutes = require("./routes/nav");
 const loginRoutes = require("./routes/login");
+const register = require("./routes/register");
 
 // Use Routes
 app.use(index);
 app.use(navRoutes);
 app.use("/login", loginRoutes);
+app.use("/sign-up", register);
 
 // Run App
 app.listen(PORT, () => {
   console.log(`Server listening in ${process.env.NODE_ENV} on port ${PORT}`);
 });
+
+///////////////////////////////////////
+
+/////// TO DO ////////////
+
+//Refactor account routes
+// into one controller
+
+///////////////////////////////////////
