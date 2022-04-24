@@ -1,3 +1,4 @@
+// Imports
 const passport = require("passport");
 const User = require("../models/user");
 // Login
@@ -29,4 +30,14 @@ exports.register = async (req, res, next) => {
   passport.authenticate("local")(req, res, () => {
     res.redirect("/");
   });
+};
+
+// User profile
+// exports.profile = async (req, res) => {
+//   res.render("profile");
+// };
+
+// View User Accounts
+exports.viewUsers = async (req, res) => {
+  res.render("profile", { user: req.user });
 };

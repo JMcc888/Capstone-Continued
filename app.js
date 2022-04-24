@@ -65,13 +65,3 @@ app.use("/appointments", apRoutes);
 app.listen(PORT, () => {
   console.log(`Server listening in ${process.env.NODE_ENV} on port ${PORT}`);
 });
-
-///////////////////////////////////////
-
-/////// TO DO ////////////
-
-// Refactor account routes into one controller
-
-// Redo Routes to behave like booking
-
-///////////////////////////////////////

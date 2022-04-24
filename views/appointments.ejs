@@ -1,12 +1,24 @@
-<h1>Haha welcome to my secret place</h1>
+<%- include('partials/header') %>
+<%- include('partials/navs/indexnav') %>
+
+<div class="appointments-title">
+<h1 class="jumbotron appointments-title-text">Appointment Requests</h1>
+<p class="appointments-title-p">Here are your current pending appointments</p>
+</div>
 <% data.forEach((ap) => { %>
-    <div class="appointment">
+    <div class="appointment-container">
+    <div class="appointment card">
         <!-- data separated -->
+        <div class="card-header">
         <p class="ap-name">Appointment for <%=JSON.stringify(ap.name) %></p>
+        </div>
+        <div class="card-body">
         <p class="ap-email">email address: <%=JSON.stringify(ap.email) %></p>
         <p class="ap-service"> <%=JSON.stringify(ap.name) %> is requesting a <%=JSON.stringify(ap.service) %></p>
         <p class="ap-hours">Appointment for <%=JSON.stringify(ap.hours) %> hours </p>
         <p class="ap-conf">Confirmation is <%=JSON.stringify(ap.confirmation) %></p>
         <p class="ap-date">Scheduled for <%=JSON.stringify(ap.date) %></p>
     </div>
+    </div>
+</div>
 <% }) %>
