@@ -11,7 +11,9 @@
         <!-- data separated -->
         <div class="card-header">
        <p class="ap-name">Appointment for <%=JSON.stringify(ap.name) %></p>
-       <a href="/appointments/view/<%= JSON.stringify(data._id)%>"><p>id here</p></a>
+       <a href="/appointments/view/<%= ap._id %>">
+        <p>id here</p>
+        </a>
         </div>
         <div class="card-body">
         <p class="ap-email">email address: <%=JSON.stringify(ap.email) %></p>
