@@ -1,0 +1,12 @@
+<h1>Haha welcome to my secret place</h1>
+<% data.forEach((ap) => { %>
+    <div class="appointment">
+        <!-- data separated -->
+        <p class="ap-name">Appointment for <%=JSON.stringify(ap.name) %></p>
+        <p class="ap-email">email address: <%=JSON.stringify(ap.email) %></p>
+        <p class="ap-service"> <%=JSON.stringify(ap.name) %> is requesting a <%=JSON.stringify(ap.service) %></p>
+        <p class="ap-hours">Appointment for <%=JSON.stringify(ap.hours) %> hours </p>
+        <p class="ap-conf">Confirmation is <%=JSON.stringify(ap.confirmation) %></p>
+        <p class="ap-date">Scheduled for <%=JSON.stringify(ap.date) %></p>
+    </div>
+<% }) %>
