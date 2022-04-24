@@ -51,11 +51,6 @@ const AppointmentSchema = new mongoose.Schema({
         "Your appointment must be at least 1 day from now and not more than 90 days.",
     },
   },
-  end: {
-    type: Date,
-    default: mongoose.Schema.date + mongoose.Schema.hours * 60 * 60 * 1000,
-    ref: "Appointment",
-  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -52,12 +52,14 @@ const index = require("./routes/index");
 const navRoutes = require("./routes/nav");
 const loginRoutes = require("./routes/login");
 const register = require("./routes/register");
+const apRoutes = require("./routes/appointments");
 
 // Use Routes
 app.use(index);
 app.use(navRoutes);
 app.use("/login", loginRoutes);
 app.use("/sign-up", register);
+app.use("/appointments", apRoutes);
 
 // Run App
 app.listen(PORT, () => {

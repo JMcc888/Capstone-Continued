@@ -1,5 +1,5 @@
 const axios = require("axios");
-
+const Appointment = require("../models/appointment");
 // Get appointments route on front-end
 exports.getAppointments = async (req, res, next) => {
   const url = process.env.APPOINTMENTS;
@@ -15,4 +15,14 @@ exports.getAppointments = async (req, res, next) => {
         console.log(error);
       }
     );
+};
+
+exports.newAppointment = async (req, res, next) => {
+  res.render("newappointment", { user: req.user });
+};
+
+exports.createAppointment = async (req, res, next) => {
+  req.body.user = req.user.id;
+  const appointment = await Appointment.create(req.body);
+  res.redirect("/schedule&booking");
 };
