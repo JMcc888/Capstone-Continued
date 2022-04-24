@@ -40,6 +40,23 @@ exports.viewAppointments = async (req, res, next) => {
     .then(
       (data) => {
         res.render("appointments", { user: req.user, data: data });
+        console.log(data[0]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+};
+
+exports.getAppointment = async (req, res, next) => {
+  Appointment.findById(req.params.id)
+    .exec()
+    .then(
+      (appointment) => {
+        res.render("appointment_show", {
+          appointment: appointment,
+          user: req.user,
+        });
       },
       (error) => {
         console.log(error);
