@@ -1,5 +1,32 @@
+<%- include('partials/header') %>
+<%- include('partials/navs/indexnav') %>
 <h1>SINGLE APPOINTMENT</h1>
-<p><%=appointment.name%></p>
-<p><%=appointment.service%></p>
-<p><%=appointment.hours%></p>
-<p><%=appointment.email%></p>
+<p>Appointment name: <%=appointment.name%></p>
+<p>Requested service: <%=appointment.service%></p>
+<p>Hours Requested: <%=appointment.hours%></p>
+<p>Given Email: <%=appointment.email%></p>
+
+<button type="button" class="btn btn-primary">Edit</button>
+<button type="button" class="btn btn-danger">Delete</button>
+
+<p>Currently Inactive</p>
+<p>Confirm appointment:</p>
+<form action="/appointments/new" method="POST">
+    <input type="text" name="title" placeholder="name" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter the confirmed name.
+      </small>
+    <input type="datetime-local" name="start" placeholder="start-time" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter a start time.
+      </small>
+    <input type="datetime-local" name="end" placeholder="end-time" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter an end time.
+      </small>
+    
+    <button type="button" class="btn btn-success">Confirm</button>
+    </form>
+
+
+<%- include('partials/footer') %>
