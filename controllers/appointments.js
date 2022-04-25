@@ -63,3 +63,18 @@ exports.getAppointment = async (req, res, next) => {
       }
     );
 };
+
+//DELETE
+exports.deleteAppointment = async (req, res, next) => {
+  Appointment.findByIdAndDelete(req.params.id)
+    .exec()
+    .then(
+      (deletedappointment) => {
+        console.log(("Deleted:", deletedappointment));
+        res.redirect("/appointments/view");
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+};
