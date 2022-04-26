@@ -8,7 +8,10 @@
 <p>Given Email: <%=appointment.email%></p>
 
 <button type="button" class="btn btn-primary">Edit</button>
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+Delete
+</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -37,22 +40,23 @@
 
 <p>Currently Inactive</p>
 <p>Confirm appointment:</p>
-<form action="/appointments/new" method="POST">
-    <input type="text" name="title" placeholder="name" autofocus required>
-    <small id="passwordHelpInline" class="text-muted">
-        Enter the confirmed name.
-      </small>
-    <input type="datetime-local" name="start" placeholder="start-time" autofocus required>
-    <small id="passwordHelpInline" class="text-muted">
-        Enter a start time.
-      </small>
-    <input type="datetime-local" name="end" placeholder="end-time" autofocus required>
-    <small id="passwordHelpInline" class="text-muted">
-        Enter an end time.
-      </small>
-    
-    <button type="button" class="btn btn-success">Confirm</button>
-    </form>
+
+<form action="/appointments/confirmed" method="POST">
+  <input type="text" name="title" placeholder="name" autofocus required>
+  <small id="passwordHelpInline" class="text-muted">
+      Enter the confirmed name.
+    </small>
+  <input type="datetime-local" name="start" placeholder="start-time" autofocus required>
+  <small id="passwordHelpInline" class="text-muted">
+      Enter a start time.
+    </small>
+  <input type="datetime-local" name="end" placeholder="end-time" autofocus required>
+  <small id="passwordHelpInline" class="text-muted">
+      Enter an end time.
+    </small>
+  
+  <button type="button submit" class="btn btn-success">Confirm</button>
+  </form>
 
 
 <%- include('partials/footer') %>
