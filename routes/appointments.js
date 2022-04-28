@@ -10,9 +10,11 @@ const {
 } = require("../controllers/appointments");
 
 const boot = require("../middleware/boot");
+const isLogged = require("../middleware/islogged");
 
 router.route("/view").get(boot, viewAppointments);
-router.route("/new").get(boot, newAppointment);
+// Checks for login, booting is excessive
+router.route("/new").get(isLogged, newAppointment);
 router.route("/new").post(createAppointment);
 
 router.route("/view/:id").get(boot, getAppointment);
