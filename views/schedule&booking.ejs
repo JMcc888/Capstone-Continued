@@ -1,11 +1,14 @@
 <%- include('partials/header') %>
 <%- include('partials/navs/schedule&bookingnav') %>
+<%- include('partials/footer') %>
+
 
 <!--Used to trim off unwanted data from the JSON response-->
 <% data.forEach((a) => delete a._id) %>
 <% data.forEach((a) => delete a.__v) %>
 <% data.forEach((a) => JSON.stringify(a)) %>
 
+<h1 class="jumbotron">Current Schedule</h1>
 
 <link href="/fullcalendar/main.css" rel="stylesheet" />
 <script src="/fullcalendar/main.js"></script>

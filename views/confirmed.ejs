@@ -1,11 +1,32 @@
 <%- include('partials/header') %>
 <%- include('partials/navs/schedule&bookingnav') %>
+<%- include('partials/footer') %>
+
 
 <!--Used to trim off unwanted data from the JSON response-->
 <% data.forEach((a) => delete a._id) %>
 <% data.forEach((a) => delete a.__v) %>
 <% data.forEach((a) => JSON.stringify(a)) %>
-<h1 class="jumbotron">Your Confirmed Appointments</h1>
+<h1 class="jumbotron">Your Confirmed Appointments:</h1>
+<h3>Update Schedule here:</h3>
+<div class="form-group">
+  <form action="/appointments/confirmed" method="POST">
+    <input type="text" class="form-control" name="title" placeholder="title" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter the confirmed name.
+      </small>
+    <input type="datetime-local"   class="form-control" name="start" placeholder="start-time" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter a start time.
+      </small>
+    <input type="datetime-local" class="form-control" name="end" placeholder="end-time" autofocus required>
+    <small id="passwordHelpInline" class="text-muted">
+        Enter an end time.
+      </small>
+    
+    <button type="button submit" class="btn btn-success">Confirm</button>
+    </form>
+  </div>
 
 
 <link href="/fullcalendar/main.css" rel="stylesheet" />

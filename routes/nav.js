@@ -1,8 +1,9 @@
 // Imports
 const express = require("express");
 const router = express.Router();
-const { getAppointments } = require("../controllers/appointments");
-const { getConfirmed } = require("../controllers/confirmed");
+const { schedule } = require("../controllers/confirmed");
+
+const isLoggedIn = require("../middleware/islogged");
 
 router.get("/about-us", (req, res) => {
   res.render("aboutus", { user: req.user });
@@ -20,7 +21,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.route("/schedule&booking").get(getConfirmed);
+router.route("/schedule&booking").get(isLoggedIn, schedule);
 
 router.get("/services", (req, res) => {
   res.render("services", { user: req.user });
