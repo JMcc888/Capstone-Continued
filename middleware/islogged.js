@@ -1,3 +1,5 @@
+// Checks to see if user is logged in
+// Redirects to sign-in. Used for home routes
 const passport = require("passport");
 
 function isLoggedIn(req, res, next) {

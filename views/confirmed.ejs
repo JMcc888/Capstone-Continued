@@ -8,7 +8,7 @@
 <% data.forEach((a) => delete a.__v) %>
 <% data.forEach((a) => JSON.stringify(a)) %>
 <h1 class="jumbotron">Your Confirmed Appointments:</h1>
-<h3>Update Schedule here:</h3>
+<h3>Add to Schedule:</h3>
 <div class="form-group">
   <form action="/appointments/confirmed" method="POST">
     <input type="text" class="form-control" name="title" placeholder="title" autofocus required>
@@ -37,12 +37,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   const newData = '<%-JSON.stringify(data)%>';
-  //console.log("Newdata is a ", typeof newData, newData)
-
-  const result = [];
-  result.push(JSON.parse(newData))
-  
-  // console.log("This is result, I've pushed the values and I'm a",typeof result, result)
   
     var calendarEl = document.getElementById('calendar');
 
