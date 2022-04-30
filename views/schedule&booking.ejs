@@ -8,7 +8,12 @@
 <% data.forEach((a) => delete a.__v) %>
 <% data.forEach((a) => JSON.stringify(a)) %>
 
-<h1 class="jumbotron">Current Schedule</h1>
+<% if(user && user.role == process.env.AUTHORIZED) { %>
+  <h1 class="jumbotron text-center">Current Schedule</h1>
+  <h2 class="text-center">Modify below</h2>
+<% } else { %>   
+  <h1 class="jumbotron text-center">Current Schedule</h1>
+  <% } %> 
 
 <link href="/fullcalendar/main.css" rel="stylesheet" />
 <script src="/fullcalendar/main.js"></script>
