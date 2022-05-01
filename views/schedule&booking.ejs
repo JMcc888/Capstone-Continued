@@ -10,7 +10,6 @@
 
 <% if(user && user.role == process.env.AUTHORIZED) { %>
   <h1 class="jumbotron text-center">Current Schedule</h1>
-  <h2 class="text-center">Modify below</h2>
   <h4 class="text-center">Create Event</h4>
 
   <div class="form-group form-container">
@@ -31,6 +30,10 @@
         </small>
       
       <button type="button submit" class="btn btn-success form-control">Confirm</button>
+      <small id="passwordHelpInline" class="text-muted">
+        Create event.
+      </small>
+      <a href="/appointments/confirmed"><button type="button" class="btn btn-primary form-control">More Options</button></a>
       </form>
     </div>
   

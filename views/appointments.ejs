@@ -10,17 +10,17 @@
     <div class="appointment card">
         <!-- data separated -->
         <div class="card-header">
-       <p class="ap-name">Appointment for <%=JSON.stringify(ap.name) %></p>
+       <p class="ap-name">Appointment for <%=ap.name %></p>
        <a class="ap-edit" href="/appointments/view/<%= ap._id %>">
         <p class="ap-edit">Details</p>
         </a>
         </div>
         <div class="card-body">
-        <p class="ap-email">email address: <%=JSON.stringify(ap.email) %></p>
-        <p class="ap-service"> <%=JSON.stringify(ap.name) %> is requesting a <%=JSON.stringify(ap.service) %></p>
-        <p class="ap-hours">Appointment for <%=JSON.stringify(ap.hours) %> hours </p>
-        <p class="ap-conf">Confirmation is <%=JSON.stringify(ap.confirmation) %></p>
-        <p class="ap-date">Scheduled for <%=JSON.stringify(ap.date) %></p>
+        <p class="ap-email">email address: <%=ap.email %></p>
+        <p class="ap-service"> <%=ap.name %> is requesting a <%=ap.service %></p>
+        <p class="ap-hours">Appointment for <%=ap.hours %> hours </p>
+        <p class="ap-conf">Confirmation is <%=ap.confirmation %></p>
+        <p class="ap-date">Scheduled for <%=ap.date %></p>
     </div>
     </div>
 </div>
