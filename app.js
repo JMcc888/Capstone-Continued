@@ -6,6 +6,7 @@ const bodyparser = require("body-parser");
 const passport = require("passport");
 const passportLocal = require("passport-local");
 const expressSession = require("express-session");
+const methodOverride = require("method-override");
 
 // Import Local Files
 const connectDB = require("./config/connectdb");
@@ -20,6 +21,8 @@ const app = express();
 app.use(express.static("public"));
 
 app.use(bodyparser.urlencoded({ extended: true }));
+
+app.use(methodOverride("_method"));
 
 // Session config
 app.use(

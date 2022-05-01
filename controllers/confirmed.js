@@ -42,7 +42,7 @@ exports.schedule = async (req, res, next) => {
 // Create confirmed Appointments
 exports.createConfirmed = async (req, res, next) => {
   const confirmed = await Confirmed.create(req.body);
-  res.redirect("/appointments/confirmed");
+  res.redirect("/schedule&booking");
 };
 
 exports.getConfirm = async (req, res, next) => {
@@ -74,4 +74,30 @@ exports.deleteConfirm = async (req, res, next) => {
         console.log(error);
       }
     );
+};
+
+// Update Form
+exports.updateConfirm = async (req, res, next) => {
+  Confirmed.findById(req.params.id)
+    .exec()
+    .then((data) => {
+      res.render("confirmed_edit", { data: data, user: req.user });
+    });
+};
+
+// Actual Update Confirmed Item
+exports.updateConfirmed = async (req, res, next) => {
+  const updated = {
+    title: req.body.title,
+    start: req.body.start,
+    end: req.body.end,
+  };
+  await Confirmed.findByIdAndUpdate(req.params.id, updated, { new: true })
+    .exec()
+    .then(() => {
+      res.redirect(`/appointments/confirmed/${req.params.id}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
