@@ -2,8 +2,6 @@
 <%- include('partials/navs/aboutusnav') %>
 <h1 class="jumbotron text-center">Current Schedule</h1>
   <h4 class="text-center">Edit Event</h4>
-  <p>Event is scheduled to begin at <%=data.start.toISOString().split("Z")%></p>
-  <p>Event is scheduled tp end at<%=data.end.toISOString().split("Z")%></p>
   
 
   <div class="form-group form-container">
@@ -13,12 +11,12 @@
           Enter the confirmed name.
         </small>
 
-      <input type="datetime-local"   class="form-control" name="start" value="<%=data.start.toISOString()%>"  autofocus>
+      <input type="datetime-local"   class="form-control" name="start" value="<%=data.start.toISOString().split("Z")[0]%>"  autofocus>
       <small id="passwordHelpInline" class="text-muted">
           Enter a start time.
         </small>
 
-      <input type="datetime-local" class="form-control" name="end" value="<%=data.end%>"  autofocus>
+      <input type="datetime-local" class="form-control" name="end" value="<%=data.end.toISOString().split("Z")[0]%>"  autofocus>
       <small id="passwordHelpInline" class="text-muted">
           Enter an end time.
         </small>
