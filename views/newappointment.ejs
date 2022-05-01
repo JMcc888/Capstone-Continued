@@ -20,7 +20,7 @@
     <small id="passwordHelpInline" class="text-muted text-center">
         Enter an amount of hours you'd like to request.
       </small> 
-    <input type="datetime-local" name="date" placeholder="date"  class="form-control" autofocus required>
+    <input type="datetime-local" name="date" placeholder="date"  class="form-control" autofocus required> 
     <small id="passwordHelpInline" class="text-muted text-center">
         Enter a date and time for your appointment.
       </small>
@@ -30,4 +30,39 @@
       </small> 
     </form>
 </div>
+
+<link href="/fullcalendar/main.css" rel="stylesheet" />
+<script src="/fullcalendar/main.js"></script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const newData = '<%-JSON.stringify(data)%>';
+  //console.log("Newdata is a ", typeof newData, newData)
+
+  const result = [];
+  result.push(JSON.parse(newData))
+  
+  // console.log("This is result, I've pushed the values and I'm a",typeof result, result)
+  
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: Date.now(),
+      headerToolbar: {
+        left: 'prev,next',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      timeZone: 'EST',
+      events: JSON.parse(newData),
+      timeFormat: 'h(:mm)t'
+    });
+    calendar.render();
+  });
+</script>
+
+<div id="calendar"></div>
     <%- include('partials/footer') %>

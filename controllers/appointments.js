@@ -18,7 +18,18 @@ exports.getAppointments = async (req, res, next) => {
 };
 
 exports.newAppointment = async (req, res, next) => {
-  res.render("newappointment", { user: req.user });
+  const conf = process.env.CONFIRMED;
+  const response = await axios
+    .get(conf, {})
+    .then((data) => data.data.data)
+    .then(
+      (data) => {
+        res.render("newappointment", { data, user: req.user });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 };
 
 exports.createAppointment = async (req, res, next) => {
