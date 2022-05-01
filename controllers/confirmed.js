@@ -44,3 +44,34 @@ exports.createConfirmed = async (req, res, next) => {
   const confirmed = await Confirmed.create(req.body);
   res.redirect("/appointments/confirmed");
 };
+
+exports.getConfirm = async (req, res, next) => {
+  Confirmed.findById(req.params.id)
+    .exec()
+    .then(
+      (data) => {
+        res.render("confirmed_show", {
+          data: data,
+          user: req.user,
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+};
+
+//DELETE
+exports.deleteConfirm = async (req, res, next) => {
+  Confirmed.findByIdAndDelete(req.params.id)
+    .exec()
+    .then(
+      (deletedschedule) => {
+        console.log(("Deleted:", deletedschedule));
+        res.redirect("/appointments/confirmed");
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+};
