@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { getConfirmed, createConfirmed } = require("../controllers/confirmed");
-const isLogged = require("../middleware/islogged");
+const boot = require("../middleware/boot");
 
-router.route("/").get(isLogged, getConfirmed).post(createConfirmed);
+router.route("/").get(boot, getConfirmed).post(createConfirmed);
 router.route("/").post(createConfirmed);
 
 module.exports = router;

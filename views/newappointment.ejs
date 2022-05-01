@@ -1,10 +1,33 @@
-<h1>Request an appointment:</h1>
+<%- include('partials/header') %>
+<%- include('partials/navs/schedule&bookingnav') %>
+<h1 class="text-center jumbotron">Request an appointment:</h1>
 
-<form action="/appointments/new" method="POST">
-    <input type="text" name="name" placeholder="name" autofocus required>
-    <input type="email" name="email" placeholder="email" autofocus required>
-    <input type="text" name="service" placeholder="service" autofocus required>
-    <input type="text" name="hours" placeholder="hours" autofocus required> 
-    <input type="datetime-local" name="date" placeholder="date" autofocus required>
-    <button type="submit">Submit</button> 
+<div class="form-group form-container">
+<form class="appointment-form" action="/appointments/new" method="POST">
+    <input type="text" name="name" placeholder="name"  class="form-control" autofocus required>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Enter a name for the appointment.
+      </small>
+    <input type="email" name="email" placeholder="email"  class="form-control" autofocus required>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Enter an email address for contact.
+      </small>
+    <input type="text" name="service" placeholder="service"  class="form-control" autofocus required>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Enter what service you're requesting.
+      </small>
+    <input type="text" name="hours" placeholder="hours"  class="form-control" autofocus required>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Enter an amount of hours you'd like to request.
+      </small> 
+    <input type="datetime-local" name="date" placeholder="date"  class="form-control" autofocus required>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Enter a date and time for your appointment.
+      </small>
+    <button class="btn btn-success form-control" type="submit">Submit</button>
+    <small id="passwordHelpInline" class="text-muted text-center">
+        Submit your request.
+      </small> 
     </form>
+</div>
+    <%- include('partials/footer') %>

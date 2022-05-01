@@ -11,7 +11,6 @@ const AppointmentSchema = new mongoose.Schema({
     match: [
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     ],
-    unique: true,
   },
   service: {
     type: String,
