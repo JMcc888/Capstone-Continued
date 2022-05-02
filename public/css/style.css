@@ -581,3 +581,10 @@ button#admin-button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.about-us-staff {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
