@@ -1,1 +1,27 @@
-MESSAGS
+<%- include('partials/header') %>
+<%- include('partials/navs/aboutusnav') %>
+
+<div class="appointments-title">
+<h1 class="jumbotron appointments-title-text">Messages</h1>
+<p class="appointments-title-p">Here are your current messages</p>
+</div>
+
+<% data.forEach((data) => { %>
+    <div class="appointment-container">
+    <div class="appointment card">
+        <!-- data separated -->
+        <div class="card-header">
+       <p class="ap-name">Message</p>
+       <a class="ap-edit" href="/messages/<%= data._id %>">
+        <p class="ap-edit">Details</p>
+        </a>
+        </div>
+        <div class="card-body">
+        <p class="ap-email">Email address: <%=data.email %></p>
+        <p class="ap-hours">Number given <%=data.phone %></p>
+        <p class="ap-date">Message: <%=data.message %></p>
+    </div>
+    </div>
+</div>
+<% }) %>
+<%- include('partials/footer') %>

@@ -588,3 +588,11 @@ button#admin-button:hover {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.card {
+  min-width: 25%;
+  max-width: 25%;
+}
+.card-text {
+  word-wrap: break-word;
+}
