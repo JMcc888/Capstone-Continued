@@ -28,7 +28,6 @@ li {
 a:link,
 a:visited {
     text-decoration: none;
-    color: white;
     font-size: 1.5rem;
 }
 
@@ -69,6 +68,7 @@ ul.header-main-nav-links li a{
     position: relative;
     padding: 0.2rem 0.6rem;
     font-size: calc(1rem + 0.6667vw);
+    color: white;
 }
 
 /* header animation */
@@ -342,12 +342,26 @@ it works :D */
 button#book-button {
     background-color: rgb(140, 127, 255);
     color: rgb(251, 255, 0);
+    margin-bottom: 10px;
+}
+
+button#admin-button {
+  background-color: rgb(13, 161, 112);
+    color: white; 
+  margin-bottom: 10px;
+
 }
 
 button#book-button:active,
 button#book-button:hover { 
     background-color: rgb(202, 60, 202);
     color: white; 
+}
+
+button#admin-button:active,
+button#admin-button:hover { 
+    background-color: rgb(140, 127, 255);
+    color: rgb(251, 255, 0);
 }
 
 /* About Us Page */
@@ -560,4 +574,10 @@ button#book-button:hover {
 .form-container {
   display: flex;
   justify-content: center;
+}
+
+.index-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

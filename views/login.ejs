@@ -1,17 +1,35 @@
 <%- include('partials/header') %>
 <div class="login-content">
-  <div class="services-login-text">
-    <h1 class="login-content-title">Login</h1>
-    <p class="login-content-para"> Login below to schedule and view current appointments</p>
-  </div>
-  <div class="login-content-main">
+ 
+
+
+  <div class="form-group form-container">
+    <div class="services-login-text">
+      <h1 class="login-content-title">Login</h1>
+      <p class="login-content-para"> Login below to schedule and view current appointments</p>
+    
+    <form action="/login" method="POST">
+      <input type="text" class="form-control" name="username" placeholder="username" autofocus required>
+      
+      <input type="password" name="password" placeholder="password" class="form-control" required>
+     
+      <a href="#"><button class="button sign-up-button form-control">Login</button></a>
+
+      </form>
+    </div>
+    </div>
+      
+      
+
+
+ 
           <div class="login-content-form">
-            <form class="login-form" action="/login" method="POST">
+            
             <p>Username</p>
-          <input type="text" name="username" placeholder="username" required>
+          
           <p>Password</p>
-          <input type="password" name="password" placeholder="password" required>
-          <a href="#"><button class="button sign-up-button">Login</button></a>
+          
+          
           <p class="forgot-password">Forgot Password?</p>
           <div class="existing-user-check">
             <p class="existing-member"><a href="/forgotpassword">
