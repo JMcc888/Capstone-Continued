@@ -252,7 +252,7 @@ it works :D */
         position: absolute;
         width: 3.5rem;
         height: 0.2rem;
-        background-color: green;
+        background-color: rgb(238, 174, 238);
         top: 0;
         left: 0;
         right: 0;
@@ -291,7 +291,7 @@ it works :D */
       .header__overlay {
         width: 100%;
         height: 100vh;
-        background-color: orange;
+        background-color: rgb(165, 160, 240);
         position: fixed;
         opacity: 0;
         display: none;
@@ -303,7 +303,7 @@ it works :D */
     display: flex;
     padding: 100px;
     height: 100vh;
-    background-color: rgb(18, 136, 136);
+    background-color: rgb(52, 18, 175);
     background-image: url(img/si.jpg);
     background-size: cover;
     background-position: center;
@@ -325,7 +325,8 @@ it works :D */
 }
 
 .index-landing p {
-    font-size: calc(1vh+1px)
+    font-size: calc(1vh+1px);
+    color: white
 }
 
 /* Booking Button */
@@ -473,6 +474,7 @@ button#admin-button:hover {
   align-items: center;
   flex-direction: column;
   background-color: orange;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -587,12 +589,4 @@ button#admin-button:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.card {
-  min-width: 25%;
-  max-width: 25%;
-}
-.card-text {
-  word-wrap: break-word;
 }

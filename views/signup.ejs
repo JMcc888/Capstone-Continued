@@ -1,8 +1,28 @@
 <%- include('partials/header') %>
-<form action="/sign-up" method="POST">
-    <input type="text" name="username" placeholder="username" autofocus required> 
-    <input type="email" name="email" placeholder="email" autofocus required>
-    <input type="password" name="password" placeholder="password" autofocus required>
-    <button type="submit">Register</button> 
-    </form>
+<h1 class="jumbotron text-center">Sign up</h1>
+<h4 class="text-center">Register to begin sending appointment requests</h4>
+<div class="form-group form-container">    
+        <form action="/sign-up" method="POST">
+          <input type="text" class="form-control" name="username" placeholder="Username" autofocus required>
+          <small id="passwordHelpInline" class="text-muted">
+             Enter a username.
+            </small>
+    
+          <input type="text"   class="form-control" name="email" placeholder="email" autofocus required>
+          <small id="passwordHelpInline" class="text-muted">
+              Enter an email addresss.
+            </small>
+    
+          <input type="password" class="form-control" name="password" placeholder="Your message here" autofocus required>
+          <small id="passwordHelpInline" class="text-muted text-center">
+              Enter a password.
+            </small>
+          
+          <button type="button submit" class="btn btn-success form-control">Confirm</button>
+          <small id="passwordHelpInline" class="text-muted">
+            Register.
+          </small>
+          
+          </form>
+        </div>
 <%- include('partials/footer') %>
