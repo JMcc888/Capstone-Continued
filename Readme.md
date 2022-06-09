@@ -1,3 +1,4 @@
 # Capstone Project - Salon Appointment Scheduler
 
-I don't even know what exactly to put here yet, but that last readme was U G L Y
+- This is the version of this project upon submission for the Semester's end.
+- The updated version will be linked here as it progresses:
