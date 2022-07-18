@@ -60,8 +60,12 @@ exports.viewAppointments = async (req, res, next) => {
 };
 
 exports.getAppointment = async (req, res, next) => {
-  Appointment.findById(req.params.id)
-    .exec()
+  const url = process.env.APPOINTMENT;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios
+    .get(url + `/${id}${KEY}`, {})
+    .then((data) => data.data.data)
     .then(
       (appointment) => {
         res.render("appointment_show", {
