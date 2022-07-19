@@ -1,5 +1,4 @@
 const axios = require("axios");
-const Message = require("../models/message");
 
 // Get confirmed Appointments
 exports.getMessages = async (req, res, next) => {
