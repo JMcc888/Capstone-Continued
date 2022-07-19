@@ -63,17 +63,17 @@ exports.getConfirm = async (req, res, next) => {
 
 //DELETE
 exports.deleteConfirm = async (req, res, next) => {
-  Confirmed.findByIdAndDelete(req.params.id)
-    .exec()
-    .then(
-      (deletedschedule) => {
-        console.log(("Deleted:", deletedschedule));
-        res.redirect("/appointments/confirmed");
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  const url = process.env.CONFIRM;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios.delete(url + `/${id}${KEY}`, {}).then(
+    () => {
+      res.redirect(`/appointments/confirmed/`);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
 };
 
 // Update Form
