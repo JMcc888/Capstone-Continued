@@ -78,26 +78,34 @@ exports.deleteConfirm = async (req, res, next) => {
 
 // Update Form
 exports.updateConfirm = async (req, res, next) => {
+  const url = process.env.CONFIRM;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
   Confirmed.findById(req.params.id)
     .exec()
     .then((data) => {
       res.render("confirmed_edit", { data: data, user: req.user });
+      console.log(`${url}/${id}${KEY}`);
     });
 };
 
 // Actual Update Confirmed Item
 exports.updateConfirmed = async (req, res, next) => {
+  const url = process.env.CONFIRM;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
   const updated = {
     title: req.body.title,
     start: req.body.start,
     end: req.body.end,
   };
-  await Confirmed.findByIdAndUpdate(req.params.id, updated, { new: true })
-    .exec()
-    .then(() => {
+
+  const response = await axios.put(url + `/${id}${KEY}`, updated).then(
+    () => {
       res.redirect(`/appointments/confirmed/${req.params.id}`);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
 };
