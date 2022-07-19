@@ -22,15 +22,26 @@ exports.getMessages = async (req, res, next) => {
     );
 };
 
-// Create confirmed Appointments
+// Create Message
 exports.createMessage = async (req, res, next) => {
-  const message = await Message.create(req.body);
-  res.redirect("/");
+  const url = process.env.MESSAGES;
+  const response = await axios
+    .post(url, {
+      phone: req.body.phone,
+      email: req.body.email,
+      message: req.body.message,
+    })
+    .then(res.redirect("/"));
 };
 
+// Get Single Message
 exports.getMessage = async (req, res, next) => {
-  Message.findById(req.params.id)
-    .exec()
+  const url = process.env.MESSAGE;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios
+    .get(url + `/${id}${KEY}`, {})
+    .then((data) => data.data.data)
     .then(
       (data) => {
         res.render("message_show", {
@@ -44,17 +55,17 @@ exports.getMessage = async (req, res, next) => {
     );
 };
 
-//DELETE
+// Delete Message
 exports.deleteMessage = async (req, res, next) => {
-  Message.findByIdAndDelete(req.params.id)
-    .exec()
-    .then(
-      (deletedmessage) => {
-        console.log(("Deleted:", deletedmessage));
-        res.redirect("/messages");
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  const url = process.env.MESSAGE;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios.delete(url + `/${id}${KEY}`, {}).then(
+    () => {
+      res.redirect(`/messages/`);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
 };
