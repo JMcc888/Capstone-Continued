@@ -46,8 +46,12 @@ exports.createConfirmed = async (req, res, next) => {
 };
 
 exports.getConfirm = async (req, res, next) => {
-  Confirmed.findById(req.params.id)
-    .exec()
+  const url = process.env.CONFIRM;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios
+    .get(url + `/${id}${KEY}`, {})
+    .then((data) => data.data.data)
     .then(
       (data) => {
         res.render("confirmed_show", {
@@ -61,7 +65,7 @@ exports.getConfirm = async (req, res, next) => {
     );
 };
 
-//DELETE
+// Delete Item
 exports.deleteConfirm = async (req, res, next) => {
   const url = process.env.CONFIRM;
   const id = req.params.id;
@@ -76,17 +80,32 @@ exports.deleteConfirm = async (req, res, next) => {
   );
 };
 
-// Update Form
+// Display Item Update Form
 exports.updateConfirm = async (req, res, next) => {
-  const url = process.env.CONFIRM;
-  const id = req.params.id;
-  const KEY = process.env.KEY;
   Confirmed.findById(req.params.id)
     .exec()
     .then((data) => {
       res.render("confirmed_edit", { data: data, user: req.user });
-      console.log(`${url}/${id}${KEY}`);
     });
+
+  // WORK IN PROGRESS REFACTOR //
+  // EJS can't parse the date... //
+
+  // const url = process.env.CONFIRM;
+  // const id = req.params.id;
+  // const KEY = process.env.KEY;
+  // const response = await axios
+  //   .get(`${url}/${id}${KEY}`, {})
+  //   .then((data) => data.data.data)
+  //   .then(
+  //     (data) => {
+  //       console.log(data, data.start, data.end),
+  //         res.render("confirmed_edit", { data: data, user: req.user });
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
 };
 
 // Actual Update Confirmed Item
