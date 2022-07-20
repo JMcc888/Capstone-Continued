@@ -59,7 +59,6 @@ const apRoutes = require("./routes/appointments");
 const confRoutes = require("./routes/confirmed");
 const messRoutes = require("./routes/message");
 
-
 // Use Routes
 app.use(index);
 app.use(navRoutes);
@@ -69,8 +68,17 @@ app.use("/appointments", apRoutes);
 app.use("/appointments/confirmed", confRoutes);
 app.use("/messages", messRoutes);
 
-
 // Run App
-app.listen(PORT, () => {
+const application = app.listen(PORT, () => {
   console.log(`Server listening in ${process.env.NODE_ENV} on port ${PORT}`);
+});
+
+// Handle unhandled promise rejections
+process.on("unhandledRejection", (err, promise) => {
+  //  Log problem to console
+  console.log(`Unhandled Promise Rejection: ${err.message}`);
+  // Stop Server and the process
+  application.close(() => {
+    process.exit(1);
+  });
 });

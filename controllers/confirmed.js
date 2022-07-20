@@ -52,8 +52,6 @@ exports.createConfirmed = async (req, res, next) => {
       user: req.body.user,
     })
     .then(res.redirect("/schedule&booking"));
-  // const confirmed = await Confirmed.create(req.body);
-  // res.redirect("/schedule&booking");
 };
 
 exports.getConfirm = async (req, res, next) => {
