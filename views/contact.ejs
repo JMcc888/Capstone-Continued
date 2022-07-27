@@ -10,25 +10,25 @@
     </div>
     <div class="form-group form-container">
       <form action="/messages" method="POST">
+        <small id="passwordHelpInline" class="text-muted">
+          Enter a phone number.
+         </small>
         <input type="text" class="form-control" name="phone" placeholder="+1-000-0000" autofocus required>
-        <small id="passwordHelpInline" class="text-muted">
-           Enter a phone number.
-          </small>
-  
-        <input type="text"   class="form-control" name="email" placeholder="email" autofocus required>
-        <small id="passwordHelpInline" class="text-muted">
-            Enter an email addresss.
-          </small>
-  
-        <input type="textarea" class="form-control" name="message" placeholder="Your message here" autofocus required>
-        <small id="passwordHelpInline" class="text-muted">
-            Enter your message.
-          </small>
         
-        <button type="button submit" class="btn btn-success form-control">Confirm</button>
+  
         <small id="passwordHelpInline" class="text-muted">
-          Send Message.
+          Enter an email addresss.
         </small>
+        <input type="text"   class="form-control" name="email" placeholder="email" autofocus required>
+        
+  
+        <small id="passwordHelpInline" class="text-muted">
+          Enter your message.
+        </small>
+        <input type="textarea" class="form-control mb-2" name="message" placeholder="Your message here" autofocus required>
+        
+        
+        <button type="button submit" class="btn btn-success form-control">Send Message</button>
         
         </form>
       </div>
