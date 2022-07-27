@@ -41,15 +41,12 @@ exports.schedule = async (req, res, next) => {
 
 // Create confirmed Appointments
 exports.createConfirmed = async (req, res, next) => {
-  const url = process.env.MESSAGES;
+  const url = process.env.CONFIRMED;
   const response = await axios
     .post(url, {
-      name: req.body.name,
-      email: req.body.email,
-      service: req.body.service,
-      hours: req.body.hours,
-      date: req.body.date,
-      user: req.body.user,
+      title: req.body.title,
+      start: req.body.start,
+      end: req.body.end,
     })
     .then(res.redirect("/schedule&booking"));
 };

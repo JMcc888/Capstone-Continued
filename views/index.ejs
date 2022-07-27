@@ -6,7 +6,7 @@
 <p class="index-subtext">Where your hair's in the best of care</p>
 <a href="appointments/new"><button class="button" id="book-button">Request a booking</button></a>
 <% if(user && user.role == process.env.AUTHORIZED) { %>
-  <h3>Administrative Links:</h3>
+  <h3 class="index-admin-links">Administrative Links:</h3>
   <div class="index-buttons">
   <a href="appointments/view"><button class="button" id="admin-button">View Requests</button></a>
   <a href="/schedule&booking"><button class="button" id="admin-button">Edit Schedule</button></a>

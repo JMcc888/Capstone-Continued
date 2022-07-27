@@ -39,7 +39,8 @@ exports.createAppointment = async (req, res, next) => {
 };
 
 exports.viewAppointments = async (req, res, next) => {
-  //console.log(req.user.role);
+  //console.log(req.user._id);user
+  //console.log(req.body);
   if (req.user.role !== process.env.AUTHORIZED) {
     res.redirect("/");
   }
@@ -81,15 +82,15 @@ exports.getAppointment = async (req, res, next) => {
 
 //DELETE
 exports.deleteAppointment = async (req, res, next) => {
-  Appointment.findByIdAndDelete(req.params.id)
-    .exec()
-    .then(
-      (deletedappointment) => {
-        console.log(("Deleted:", deletedappointment));
-        res.redirect("/appointments/view");
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  const url = process.env.APPOINTMENT;
+  const id = req.params.id;
+  const KEY = process.env.KEY;
+  const response = await axios.delete(url + `/${id}${KEY}`, {}).then(
+    () => {
+      res.redirect(`/appointments/view`);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
 };

@@ -18,6 +18,6 @@ router.route("/new").get(isLogged, newAppointment);
 router.route("/new").post(createAppointment);
 
 router.route("/view/:id").get(boot, getAppointment);
-router.route("/view/:id").post(deleteAppointment);
+router.route("/view/:id").delete(deleteAppointment);
 
 module.exports = router;
