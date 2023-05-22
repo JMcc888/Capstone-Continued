@@ -58,6 +58,7 @@ const register = require("./routes/register");
 const apRoutes = require("./routes/appointments");
 const confRoutes = require("./routes/confirmed");
 const messRoutes = require("./routes/message");
+const demoRoutes = require('./routes/demo')
 
 // Use Routes
 app.use(index);
@@ -67,6 +68,7 @@ app.use("/sign-up", register);
 app.use("/appointments", apRoutes);
 app.use("/appointments/confirmed", confRoutes);
 app.use("/messages", messRoutes);
+app.use('/demo', demoRoutes)
 
 // Run App
 const application = app.listen(PORT, () => {

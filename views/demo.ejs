@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+<%- include('partials/navs/aboutusnav') %>
+<%- include('partials/footer') %>
+
+<!--Used to trim off unwanted data from the JSON response-->
+<% data.forEach((a) => delete a._id) %>
+<% data.forEach((a) => delete a.__v) %>
+<% data.forEach((a) => JSON.stringify(a)) %>
+
+<link href="/fullcalendar/main.css" rel="stylesheet" />
+<script src="/fullcalendar/main.js"></script>
+
+<h1 class="jumbotron text-center">Calendar Demo</h1>
+<div class="demo-text-wrap">
+    <p class="text-center">In this application, administrators create appointments to be rendered to the calendar, but this section allows for guests to create example appointments to be rendered. Populate the required information below and hit submit to view your appointment on the calendar!</p>
+</div>
+
+  <h4 class="text-center">Create Event</h4>
+
+  <div class="form-group form-container">
+    <form action="/demo" method="POST">
+      <input type="text" class="form-control" name="title" placeholder="title" autofocus required>
+      <small id="passwordHelpInline" class="text-muted">
+          Enter an event title.
+        </small>
+
+      <input type="datetime-local"   class="form-control" name="start" placeholder="start-time" autofocus required>
+      <small id="passwordHelpInline" class="text-muted">
+          Enter a start time.
+        </small>
+
+      <input type="datetime-local" class="form-control" name="end" placeholder="end-time" autofocus required>
+      <small id="passwordHelpInline" class="text-muted">
+          Enter an end time.
+        </small>
+      
+      <button type="button submit" class="btn btn-success form-control">Create Appointment</button>
+      <small id="passwordHelpInline" class="text-muted">
+        Create appointment.
+      </small>
+      </form>
+    </div>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const newData = '<%-JSON.stringify(data)%>';
+      
+        var calendarEl = document.getElementById('calendar');
+    
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          themeSystem: 'boostrap',
+          initialView: 'dayGridMonth',
+          initialDate: Date.now(),
+          headerToolbar: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          },
+          timeZone: 'EST',
+          events: JSON.parse(newData),
+          timeFormat: 'h(:mm)t'
+        });
+        calendar.render();
+      });
+    </script>
+
+<div id="calendar"></div>

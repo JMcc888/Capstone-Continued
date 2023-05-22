@@ -291,7 +291,7 @@ it works :D */
       .header__overlay {
         width: 100%;
         height: 100vh;
-        background-color: rgb(165, 160, 240);
+        background-color: rgb(21, 5, 235);
         position: fixed;
         opacity: 0;
         display: none;
@@ -303,7 +303,7 @@ it works :D */
     display: flex;
     padding: 100px;
     height: 100vh;
-    background-color: rgb(52, 18, 175);
+    background-color: indigo;
     background-image: url(img/si.jpg);
     background-size: cover;
     background-position: center;
@@ -372,6 +372,13 @@ button#admin-button:hover {
     align-items: center;
 }
 
+.about-us-para-wrap {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .about-us-content-title {
     background-color: khaki;
     width: 100%;
@@ -387,48 +394,82 @@ button#admin-button:hover {
 
 
 .about-us-content-para {
-    color: blueviolet;
     font-size: 20px;
+}
+
+.about-us-wrap-para {
+  width: 70%;
 }
 
 .about-us-img-1 {
     display: flex;
-    background-color: rgb(226, 223, 43);
+    background-color: blanchedalmond;
+    padding: 1rem;
+}
+
+.about-us-img-1 img,
+.about-us-img-2 img,
+.about-us-img-3 img {
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  max-width: 300px;
 }
 
 .about-us-img-2 {
     display: flex;
-    background-color: rgb(58, 226, 43);
+    background-color: blanchedalmond;
     flex-direction: row-reverse;
+    padding: 1rem;
+
 }
 
 .about-us-img-3 {
     display: flex;
-    background-color: rgb(43, 226, 113);
+    background-color: blanchedalmond;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+
 }
 
 .about-us-content img{
-    width: 26rem
+    width: 26rem;
+    margin: 1rem;
 }
 
 /* Adjusting Images */
 
 @media screen and (max-width: 600px) {
-
+  .services-content img {
+    width: 100%;
+    overflow: hidden;
+  }
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 700px) {
+  /* .about-us-img-1 img,
+  .about-us-img-2 img,
+  .about-us-img-3 img{
+    width: 300px;
+    height: 300px;
+} */
+}
+
+@media screen and (max-width: 856px) {
     .about-us-img-1{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .about-us-img-1 img{
         width: 100%;
     }
     .about-us-img-2{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .about-us-img-2 img{
         width: 100%;
@@ -437,13 +478,13 @@ button#admin-button:hover {
         width: 100%;
     }
     .about-us-content-para {
-        color: blueviolet;
         font-size: 20px;
     }
-    .services-content img {
-      width: 100%;
-      overflow: hidden;
+
+    .about-us-para-wrap {
+      width: 70%;
     }
+    
 }
 
 .sign-up-content, .login-content, .contact-us {
@@ -453,7 +494,7 @@ button#admin-button:hover {
 }
 
 
-.sign-up-content-main, .login-content-main, .contact-us-content {
+.sign-up-content-main, .contact-us-content {
   display: flex;
   flex-direction: column;
   background: -webkit-linear-gradient(rgb(48, 233, 57), rgb(1, 255, 115));
@@ -532,6 +573,7 @@ button#admin-button:hover {
   background-color: pink;
   align-items: center;
   word-wrap: break-word;
+  padding: 2rem;
 }
 
 .services-content-img {
@@ -584,7 +626,12 @@ button#admin-button:hover {
   justify-content: space-between;
 }
 
+.about-us-staff-text {
+  background-color: blanchedalmond;
+}
+
 .about-us-staff {
+  background-color: blanchedalmond;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -593,4 +640,28 @@ button#admin-button:hover {
 
 .index-admin-links {
   color: white;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .demo-text-wrap {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.button-wrap button {
+  margin: 0.5rem;
+  background-color: blueviolet;
+  color: white;
+}
+
+.card {
+  margin-top: 0.5rem;
 }
