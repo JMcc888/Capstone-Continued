@@ -54,7 +54,7 @@ ul.header-main-nav-links li{
 }
 
 /* Dynamic tabs */
-ul.header-main-nav-links li:nth-child(5) {
+/* ul.header-main-nav-links li:nth-child(5) {
     background-color: orchid;
     border: 1.5px solid green;
 }
@@ -62,7 +62,7 @@ ul.header-main-nav-links li:nth-child(5) {
 ul.header-main-nav-links li:nth-child(6) {
     background-color: blue;
     border: 1.5px solid purple;
-}
+} */
 
 ul.header-main-nav-links li a{
     position: relative;
@@ -108,13 +108,13 @@ ul.header-main-nav-links li a:active::after{
 }
 
 
-ul.header-main-nav-links li:nth-child(5):hover {
-    background-color: red;
+/* ul.header-main-nav-links li:nth-child(5):hover {
+    background-color: purple;
 }
 
 ul.header-main-nav-links li:nth-child(6):hover {
     background-color: pink;
-}
+} */
 
 
 .header__menu {
